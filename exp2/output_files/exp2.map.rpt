@@ -1,0 +1,779 @@
+Analysis & Synthesis report for exp2
+Wed Mar 22 15:48:37 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|altsyncram_l5a2:altsyncram1
+ 15. Source assignments for crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|altsyncram_23d2:altsyncram1
+ 16. Parameter Settings for User Entity Instance: ram1:inst|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: crom:inst3|altsyncram:altsyncram_component
+ 18. Parameter Settings for User Entity Instance: 74161:inst4
+ 19. Parameter Settings for User Entity Instance: 74161:inst5
+ 20. Parameter Settings for User Entity Instance: 74161:inst1
+ 21. Parameter Settings for User Entity Instance: 74161:inst2
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. In-System Memory Content Editor Settings
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Mar 22 15:48:37 2023            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; exp2                                             ;
+; Top-level Entity Name              ; exp2                                             ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; 348                                              ;
+;     Total combinational functions  ; 324                                              ;
+;     Dedicated logic registers      ; 197                                              ;
+; Total registers                    ; 197                                              ;
+; Total pins                         ; 48                                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 4,096                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; exp2               ; exp2               ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-20        ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+---------------------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+---------------------------------------+---------------------------------------------------------------------------+---------+
+; exp2.hex                         ; yes             ; User Hexadecimal (Intel-Format) File  ; E:/code/Quartus/cpu/exp2/exp2.hex                                         ;         ;
+; ram1.vhd                         ; yes             ; User Wizard-Generated File            ; E:/code/Quartus/cpu/exp2/ram1.vhd                                         ;         ;
+; rom.hex                          ; yes             ; User Hexadecimal (Intel-Format) File  ; E:/code/Quartus/cpu/exp2/rom.hex                                          ;         ;
+; crom.vhd                         ; yes             ; User Wizard-Generated File            ; E:/code/Quartus/cpu/exp2/crom.vhd                                         ;         ;
+; exp2.bdf                         ; yes             ; User Block Diagram/Schematic File     ; E:/code/Quartus/cpu/exp2/exp2.bdf                                         ;         ;
+; 74273.bdf                        ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/others/maxplus2/74273.bdf           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_nsj1.tdf           ; yes             ; Auto-Generated Megafunction           ; E:/code/Quartus/cpu/exp2/db/altsyncram_nsj1.tdf                           ;         ;
+; db/altsyncram_l5a2.tdf           ; yes             ; Auto-Generated Megafunction           ; E:/code/Quartus/cpu/exp2/db/altsyncram_l5a2.tdf                           ;         ;
+; sld_mod_ram_rom.vhd              ; yes             ; Encrypted Megafunction                ; d:/software/quartus/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd   ;         ;
+; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction                ; d:/software/quartus/quartus/libraries/megafunctions/sld_rom_sr.vhd        ;         ;
+; db/altsyncram_7mb1.tdf           ; yes             ; Auto-Generated Megafunction           ; E:/code/Quartus/cpu/exp2/db/altsyncram_7mb1.tdf                           ;         ;
+; db/altsyncram_23d2.tdf           ; yes             ; Auto-Generated Megafunction           ; E:/code/Quartus/cpu/exp2/db/altsyncram_23d2.tdf                           ;         ;
+; 74161.tdf                        ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/others/maxplus2/74161.tdf           ;         ;
+; aglobal.inc                      ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/megafunctions/aglobal.inc           ;         ;
+; f74161.bdf                       ; yes             ; Megafunction                          ; d:/software/quartus/quartus/libraries/others/maxplus2/f74161.bdf          ;         ;
+; sld_hub.vhd                      ; yes             ; Encrypted Megafunction                ; d:/software/quartus/quartus/libraries/megafunctions/sld_hub.vhd           ;         ;
+; sld_jtag_hub.vhd                 ; yes             ; Encrypted Megafunction                ; d:/software/quartus/quartus/libraries/megafunctions/sld_jtag_hub.vhd      ;         ;
++----------------------------------+-----------------+---------------------------------------+---------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 348                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 324                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 157                      ;
+;     -- 3 input functions                    ; 63                       ;
+;     -- <=2 input functions                  ; 104                      ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 294                      ;
+;     -- arithmetic mode                      ; 30                       ;
+;                                             ;                          ;
+; Total registers                             ; 197                      ;
+;     -- Dedicated logic registers            ; 197                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 48                       ;
+; Total memory bits                           ; 4096                     ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 208                      ;
+; Total fan-out                               ; 2141                     ;
+; Average fan-out                             ; 3.33                     ;
++---------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                           ;
++---------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                          ; Library Name ;
++---------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |exp2                                                               ; 324 (27)          ; 197 (0)      ; 4096        ; 0            ; 0       ; 0         ; 48   ; 0            ; |exp2                                                                                                                                                        ; work         ;
+;    |74161:inst1|                                                    ; 6 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74161:inst1                                                                                                                                            ; work         ;
+;       |f74161:sub|                                                  ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74161:inst1|f74161:sub                                                                                                                                 ; work         ;
+;    |74161:inst2|                                                    ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74161:inst2                                                                                                                                            ; work         ;
+;       |f74161:sub|                                                  ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74161:inst2|f74161:sub                                                                                                                                 ; work         ;
+;    |74161:inst4|                                                    ; 6 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74161:inst4                                                                                                                                            ; work         ;
+;       |f74161:sub|                                                  ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74161:inst4|f74161:sub                                                                                                                                 ; work         ;
+;    |74161:inst5|                                                    ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74161:inst5                                                                                                                                            ; work         ;
+;       |f74161:sub|                                                  ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74161:inst5|f74161:sub                                                                                                                                 ; work         ;
+;    |74273:inst17|                                                   ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74273:inst17                                                                                                                                           ; work         ;
+;    |74273:inst41|                                                   ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|74273:inst41                                                                                                                                           ; work         ;
+;    |crom:inst3|                                                     ; 60 (0)            ; 34 (0)       ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|crom:inst3                                                                                                                                             ; work         ;
+;       |altsyncram:altsyncram_component|                             ; 60 (0)            ; 34 (0)       ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|crom:inst3|altsyncram:altsyncram_component                                                                                                             ; work         ;
+;          |altsyncram_7mb1:auto_generated|                           ; 60 (0)            ; 34 (0)       ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated                                                                              ; work         ;
+;             |altsyncram_23d2:altsyncram1|                           ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|altsyncram_23d2:altsyncram1                                                  ; work         ;
+;             |sld_mod_ram_rom:mgl_prim2|                             ; 60 (35)           ; 34 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                    ; work         ;
+;                |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr| ; 25 (25)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr ; work         ;
+;    |ram1:inst|                                                      ; 59 (0)            ; 34 (0)       ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|ram1:inst                                                                                                                                              ; work         ;
+;       |altsyncram:altsyncram_component|                             ; 59 (0)            ; 34 (0)       ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|ram1:inst|altsyncram:altsyncram_component                                                                                                              ; work         ;
+;          |altsyncram_nsj1:auto_generated|                           ; 59 (0)            ; 34 (0)       ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated                                                                               ; work         ;
+;             |altsyncram_l5a2:altsyncram1|                           ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|altsyncram_l5a2:altsyncram1                                                   ; work         ;
+;             |sld_mod_ram_rom:mgl_prim2|                             ; 59 (35)           ; 34 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                     ; work         ;
+;                |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr| ; 24 (24)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr  ; work         ;
+;    |sld_hub:auto_hub|                                               ; 158 (1)           ; 97 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|sld_hub:auto_hub                                                                                                                                       ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                ; 157 (119)         ; 97 (69)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                          ; work         ;
+;          |sld_rom_sr:hub_info_reg|                                  ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                  ; work         ;
+;          |sld_shadow_jsm:shadow_jsm|                                ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                ; work         ;
++---------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                       ;
++------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+----------+
+; Name                                                                                                             ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF      ;
++------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+----------+
+; crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|altsyncram_23d2:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048 ; rom.hex  ;
+; ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|altsyncram_l5a2:altsyncram1|ALTSYNCRAM  ; AUTO ; True Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048 ; exp2.hex ;
++------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                ;
++--------+--------------+---------+--------------+--------------+------------------+-----------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance  ; IP Include File                   ;
++--------+--------------+---------+--------------+--------------+------------------+-----------------------------------+
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |exp2|ram1:inst  ; E:/code/Quartus/cpu/exp2/ram1.vhd ;
+; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |exp2|crom:inst3 ; E:/code/Quartus/cpu/exp2/crom.vhd ;
++--------+--------------+---------+--------------+--------------+------------------+-----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                                      ; Reason for Removal                     ;
++------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]  ; Stuck at GND due to stuck port data_in ;
+; crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2                                                                                              ;                                        ;
++------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 197   ;
+; Number of registers using Synchronous Clear  ; 22    ;
+; Number of registers using Synchronous Load   ; 29    ;
+; Number of registers using Asynchronous Clear ; 111   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 127   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                           ;
++------------------------------------------------------------------------------+---------+
+; Inverted Register                                                            ; Fan out ;
++------------------------------------------------------------------------------+---------+
+; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|tdo            ; 1       ;
+; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[2] ; 2       ;
+; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[1] ; 3       ;
+; Total number of inverted registers = 3                                       ;         ;
++------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |exp2|ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[1]                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |exp2|ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[4]                                                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |exp2|crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |exp2|crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[0]                                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |exp2|ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[2]                                                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |exp2|crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[6]                                                ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |exp2|ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[1]  ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |exp2|crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[1] ;
+; 24:1               ; 4 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; Yes        ; |exp2|ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[0]       ;
+; 24:1               ; 4 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; Yes        ; |exp2|crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[0]      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[1]                                                                                     ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[0]                                                                                        ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[2][0]                                                                                            ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[1][0]                                                                                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[4]                                                                  ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[2][1]                                                                                     ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[1][3]                                                                                     ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[3]                                                                                              ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[1]                                                                                       ;
+; 28:1               ; 4 bits    ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |exp2|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|altsyncram_l5a2:altsyncram1 ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                            ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                             ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|altsyncram_23d2:altsyncram1 ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                             ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                              ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram1:inst|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------+
+; Parameter Name                     ; Value                ; Type                       ;
++------------------------------------+----------------------+----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                    ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE             ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                    ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                    ;
+; WIDTH_A                            ; 8                    ; Signed Integer             ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer             ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                    ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                    ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                    ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                    ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                    ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                    ;
+; WIDTH_B                            ; 1                    ; Untyped                    ;
+; WIDTHAD_B                          ; 1                    ; Untyped                    ;
+; NUMWORDS_B                         ; 1                    ; Untyped                    ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                    ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                    ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                    ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                    ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                    ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                    ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                    ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                    ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                    ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                    ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                    ;
+; BYTE_SIZE                          ; 8                    ; Untyped                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                    ;
+; INIT_FILE                          ; exp2.hex             ; Untyped                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                    ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                    ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                    ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                    ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                    ;
+; CBXI_PARAMETER                     ; altsyncram_nsj1      ; Untyped                    ;
++------------------------------------+----------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: crom:inst3|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------+
+; Parameter Name                     ; Value                ; Type                        ;
++------------------------------------+----------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                     ;
+; WIDTH_A                            ; 8                    ; Signed Integer              ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer              ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer              ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WIDTH_B                            ; 1                    ; Untyped                     ;
+; WIDTHAD_B                          ; 1                    ; Untyped                     ;
+; NUMWORDS_B                         ; 1                    ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer              ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
+; BYTE_SIZE                          ; 8                    ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; INIT_FILE                          ; rom.hex              ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_7mb1      ; Untyped                     ;
++------------------------------------+----------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 74161:inst4 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 74161:inst5 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 74161:inst1 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 74161:inst2 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                       ;
++-------------------------------------------+--------------------------------------------+
+; Name                                      ; Value                                      ;
++-------------------------------------------+--------------------------------------------+
+; Number of entity instances                ; 2                                          ;
+; Entity Instance                           ; ram1:inst|altsyncram:altsyncram_component  ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                ;
+;     -- WIDTH_A                            ; 8                                          ;
+;     -- NUMWORDS_A                         ; 256                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                               ;
+;     -- WIDTH_B                            ; 1                                          ;
+;     -- NUMWORDS_B                         ; 1                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                     ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                               ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                       ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ;
+; Entity Instance                           ; crom:inst3|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                        ;
+;     -- WIDTH_A                            ; 8                                          ;
+;     -- NUMWORDS_A                         ; 256                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                               ;
+;     -- WIDTH_B                            ; 1                                          ;
+;     -- NUMWORDS_B                         ; 1                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                     ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                               ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                       ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ;
++-------------------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; In-System Memory Content Editor Settings                                                                                              ;
++----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------+
+; Instance Index ; Instance ID ; Width ; Depth ; Mode       ; Hierarchy Location                                                        ;
++----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------+
+; 0              ; RAM         ; 8     ; 256   ; Read/Write ; ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated  ;
+; 1              ; CROM        ; 8     ; 256   ; Read/Write ; crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated ;
++----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Elapsed Time Per Partition      ;
++------------------+--------------+
+; Partition Name   ; Elapsed Time ;
++------------------+--------------+
+; Top              ; 00:00:00     ;
+; sld_hub:auto_hub ; 00:00:00     ;
++------------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Mar 22 15:48:35 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off exp2 -c exp2
+Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file ram1.vhd
+    Info (12022): Found design unit 1: ram1-SYN
+    Info (12023): Found entity 1: ram1
+Info (12021): Found 2 design units, including 1 entities, in source file crom.vhd
+    Info (12022): Found design unit 1: crom-SYN
+    Info (12023): Found entity 1: crom
+Info (12021): Found 1 design units, including 1 entities, in source file exp2.bdf
+    Info (12023): Found entity 1: exp2
+Info (12127): Elaborating entity "exp2" for the top level hierarchy
+Warning (275080): Converted elements in bus name "a" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "a[7..0]" to "a7..0"
+    Warning (275081): Converted element name(s) from "a[0]" to "a0"
+    Warning (275081): Converted element name(s) from "a[1]" to "a1"
+    Warning (275081): Converted element name(s) from "a[2]" to "a2"
+    Warning (275081): Converted element name(s) from "a[3]" to "a3"
+    Warning (275081): Converted element name(s) from "a[4]" to "a4"
+    Warning (275081): Converted element name(s) from "a[5]" to "a5"
+    Warning (275081): Converted element name(s) from "a[6]" to "a6"
+    Warning (275081): Converted element name(s) from "a[7]" to "a7"
+Warning (275080): Converted elements in bus name "ca" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "ca[7..0]" to "ca7..0"
+    Warning (275081): Converted element name(s) from "ca[0]" to "ca0"
+    Warning (275081): Converted element name(s) from "ca[1]" to "ca1"
+    Warning (275081): Converted element name(s) from "ca[2]" to "ca2"
+    Warning (275081): Converted element name(s) from "ca[3]" to "ca3"
+    Warning (275081): Converted element name(s) from "ca[4]" to "ca4"
+    Warning (275081): Converted element name(s) from "ca[5]" to "ca5"
+    Warning (275081): Converted element name(s) from "ca[6]" to "ca6"
+    Warning (275081): Converted element name(s) from "ca[7]" to "ca7"
+Warning (275080): Converted elements in bus name "cq" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "cq[7..0]" to "cq7..0"
+    Warning (275081): Converted element name(s) from "cq[2]" to "cq2"
+    Warning (275081): Converted element name(s) from "cq[1]" to "cq1"
+    Warning (275081): Converted element name(s) from "cq[3]" to "cq3"
+    Warning (275081): Converted element name(s) from "cq[5]" to "cq5"
+    Warning (275081): Converted element name(s) from "cq[4]" to "cq4"
+    Warning (275081): Converted element name(s) from "cq[6]" to "cq6"
+Warning (275080): Converted elements in bus name "q" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "q[7..0]" to "q7..0"
+    Warning (275081): Converted element name(s) from "q[7]" to "q7"
+    Warning (275081): Converted element name(s) from "q[0]" to "q0"
+    Warning (275081): Converted element name(s) from "q[1]" to "q1"
+    Warning (275081): Converted element name(s) from "q[2]" to "q2"
+    Warning (275081): Converted element name(s) from "q[3]" to "q3"
+    Warning (275081): Converted element name(s) from "q[4]" to "q4"
+    Warning (275081): Converted element name(s) from "q[5]" to "q5"
+    Warning (275081): Converted element name(s) from "q[6]" to "q6"
+    Warning (275081): Converted element name(s) from "q[7]" to "q7"
+    Warning (275081): Converted element name(s) from "q[0]" to "q0"
+    Warning (275081): Converted element name(s) from "q[1]" to "q1"
+    Warning (275081): Converted element name(s) from "q[2]" to "q2"
+    Warning (275081): Converted element name(s) from "q[3]" to "q3"
+    Warning (275081): Converted element name(s) from "q[4]" to "q4"
+    Warning (275081): Converted element name(s) from "q[5]" to "q5"
+    Warning (275081): Converted element name(s) from "q[6]" to "q6"
+Info (12128): Elaborating entity "74273" for hierarchy "74273:inst41"
+Info (12130): Elaborated megafunction instantiation "74273:inst41"
+Info (12128): Elaborating entity "ram1" for hierarchy "ram1:inst"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ram1:inst|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "ram1:inst|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "ram1:inst|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "exp2.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=RAM"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nsj1.tdf
+    Info (12023): Found entity 1: altsyncram_nsj1
+Info (12128): Elaborating entity "altsyncram_nsj1" for hierarchy "ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_l5a2.tdf
+    Info (12023): Found entity 1: altsyncram_l5a2
+Info (12128): Elaborating entity "altsyncram_l5a2" for hierarchy "ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|altsyncram_l5a2:altsyncram1"
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2"
+Info (12130): Elaborated megafunction instantiation "ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2"
+Info (12133): Instantiated megafunction "ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter:
+    Info (12134): Parameter "CVALUE" = "00000000"
+    Info (12134): Parameter "IS_DATA_IN_RAM" = "1"
+    Info (12134): Parameter "IS_READABLE" = "1"
+    Info (12134): Parameter "NODE_NAME" = "1380011264"
+    Info (12134): Parameter "NUMWORDS" = "256"
+    Info (12134): Parameter "SHIFT_COUNT_BITS" = "4"
+    Info (12134): Parameter "WIDTH_WORD" = "8"
+    Info (12134): Parameter "WIDTHAD" = "8"
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "ram1:inst|altsyncram:altsyncram_component|altsyncram_nsj1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr"
+Info (12128): Elaborating entity "crom" for hierarchy "crom:inst3"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "crom:inst3|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "crom:inst3|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "crom:inst3|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "rom.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=CROM"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7mb1.tdf
+    Info (12023): Found entity 1: altsyncram_7mb1
+Info (12128): Elaborating entity "altsyncram_7mb1" for hierarchy "crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_23d2.tdf
+    Info (12023): Found entity 1: altsyncram_23d2
+Info (12128): Elaborating entity "altsyncram_23d2" for hierarchy "crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|altsyncram_23d2:altsyncram1"
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2"
+Info (12130): Elaborated megafunction instantiation "crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2"
+Info (12133): Instantiated megafunction "crom:inst3|altsyncram:altsyncram_component|altsyncram_7mb1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter:
+    Info (12134): Parameter "CVALUE" = "00000000"
+    Info (12134): Parameter "IS_DATA_IN_RAM" = "1"
+    Info (12134): Parameter "IS_READABLE" = "1"
+    Info (12134): Parameter "NODE_NAME" = "1129467725"
+    Info (12134): Parameter "NUMWORDS" = "256"
+    Info (12134): Parameter "SHIFT_COUNT_BITS" = "4"
+    Info (12134): Parameter "WIDTH_WORD" = "8"
+    Info (12134): Parameter "WIDTHAD" = "8"
+Info (12128): Elaborating entity "74161" for hierarchy "74161:inst4"
+Info (12130): Elaborated megafunction instantiation "74161:inst4"
+Info (12128): Elaborating entity "f74161" for hierarchy "74161:inst4|f74161:sub"
+Info (12131): Elaborated megafunction instantiation "74161:inst4|f74161:sub", which is child of megafunction instantiation "74161:inst4"
+Info (12128): Elaborating entity "74161" for hierarchy "74161:inst5"
+Info (12130): Elaborated megafunction instantiation "74161:inst5"
+Info (13014): Ignored 16 buffer(s)
+    Info (13015): Ignored 16 CARRY buffer(s)
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 428 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 47 output pins
+    Info (21061): Implemented 359 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 48 warnings
+    Info: Peak virtual memory: 4695 megabytes
+    Info: Processing ended: Wed Mar 22 15:48:37 2023
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
