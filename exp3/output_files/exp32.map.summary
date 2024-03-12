@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Nov 20 16:55:39 2023
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : exp32
+Top-level Entity Name : exp32
+Family : Cyclone IV E
+Total logic elements : 553
+    Total combinational functions : 498
+    Dedicated logic registers : 246
+Total registers : 246
+Total pins : 69
+Total virtual pins : 0
+Total memory bits : 8,192
+Embedded Multiplier 9-bit elements : 1
+Total PLLs : 0
